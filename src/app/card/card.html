@@ -1,0 +1,49 @@
+<mat-card style="max-width: 320px; margin: 150px auto;">
+
+  <mat-card-header>
+    <mat-card-title>Wireless Headphones</mat-card-title>
+    <mat-card-subtitle>Premium Audio</mat-card-subtitle>
+  </mat-card-header>
+
+  <img
+    mat-card-image
+    src="https://cdn.mos.cms.futurecdn.net/UaBS4vF49TGhiy2QAyXdwc.jpg"
+    alt="Headphones"
+  >
+
+  <mat-card-content>
+    <p>Experience crystal clear sound with our premium wireless headphones. 40 hour battery life.</p>
+
+    <mat-chip-set>
+      <mat-chip>high quality audio</mat-chip>
+      <mat-chip>40hr Battery</mat-chip>
+      <mat-chip>Bluetooth 5.0</mat-chip>
+    </mat-chip-set>
+
+    <p style="margin-top: 12px; font-size: 22px; font-weight: bold;">
+      $89.99
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addToCart()">
+      <mat-icon>add_shopping_cart</mat-icon>
+      Add to Cart
+    </button>
+
+    <button
+      mat-icon-button
+      color="warn"
+      [matBadge]="cartCount()"
+      [matBadgeHidden]="cartCount() === 0"
+      matBadgeColor="accent">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <button mat-stroked-button (click)="removeFromCart()">
+      <mat-icon>remove</mat-icon>
+      Remove
+    </button>
+  </mat-card-actions>
+
+</mat-card>

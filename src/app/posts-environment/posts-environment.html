@@ -1,0 +1,22 @@
+<h2>📰 Posts</h2>
+
+<!-- environment bar -->
+<p style="color: gray; font-size: 13px;">
+  Environment: {{ isProduction ? '🔴 Production' : '🟢 Development' }} |
+  API: {{ apiUrl }}
+</p>
+
+<hr>
+
+@if (isLoading()) {
+  <p>Loading...</p>
+} @else if (error()) {
+  <p style="color: red;">{{ error() }}</p>
+} @else {
+  @for (post of posts(); track post.id) {
+    <div style="border: 1px solid #c3c2c2; padding: 12px; margin-bottom: 10px; border-radius: 8px;">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.userId }}</p>
+    </div>
+  }
+}
